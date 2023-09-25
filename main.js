@@ -74,11 +74,32 @@ new Chart("myChart", {
   },
 });
 
+const accordion = document.querySelectorAll(".accordion h3");
+let mainParent;
+let height;
+let answer;
+accordion.forEach((item) => {
+  item.addEventListener("click", () => {
+    height =
+      item.parentElement.nextElementSibling.firstElementChild.offsetHeight;
+    answer = item.parentElement.nextElementSibling;
+    mainParent = item.parentElement.parentElement;
+    if (mainParent.classList.contains("active")) {
+      mainParent.classList.remove("active");
+      answer.style.height = `0px`;
+    } else {
+      mainParent.classList.add("active");
+      answer.style.height = `${height}px`;
+    }
+  });
+});
+
 document.getElementById("teams-list").addEventListener("click", () => {
   document.querySelector("#close-ham-menu").click();
   document.querySelector(".showcase-area").style.display = "none";
   document.querySelector("#selected-teams-container").style.display = "none";
   document.querySelector("#testimonials").style.display = "block";
+  document.querySelector("#rules").style.display = "none";
 });
 
 document.getElementById("home").addEventListener("click", () => {
@@ -86,6 +107,7 @@ document.getElementById("home").addEventListener("click", () => {
   document.querySelector(".showcase-area").style.display = "block";
   document.querySelector("#testimonials").style.display = "none";
   document.querySelector("#selected-teams-container").style.display = "none";
+  document.querySelector("#rules").style.display = "none";
 });
 
 document.getElementById("selected-teams").addEventListener("click", () => {
@@ -93,4 +115,13 @@ document.getElementById("selected-teams").addEventListener("click", () => {
   document.querySelector(".showcase-area").style.display = "none";
   document.querySelector("#testimonials").style.display = "none";
   document.querySelector("#selected-teams-container").style.display = "block";
+  document.querySelector("#rules").style.display = "none";
+});
+
+document.getElementById("rules-button").addEventListener("click", () => {
+  document.querySelector("#close-ham-menu").click();
+  document.querySelector(".showcase-area").style.display = "none";
+  document.querySelector("#testimonials").style.display = "none";
+  document.querySelector("#selected-teams-container").style.display = "none";
+  document.querySelector("#rules").style.display = "block";
 });
