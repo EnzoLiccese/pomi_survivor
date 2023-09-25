@@ -57,4 +57,19 @@ new Chart("myChart", {
       },
     ],
   },
+  options: {
+    legend: {
+      display: false,
+    },
+    tooltips: {
+      callbacks: {
+        title: function (tooltipItem, data) {
+          return data["labels"][tooltipItem[0]["index"]];
+        },
+        label: function (tooltipItem, data) {
+          return data["datasets"][0]["data"][tooltipItem["index"]] + "%";
+        },
+      },
+    },
+  },
 });
