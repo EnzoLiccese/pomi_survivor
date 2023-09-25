@@ -657,7 +657,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  margin-top: 20px;
 }
 
 .death-container {
@@ -854,4 +853,12 @@ body {
   .modal-wrap p {
     padding: 15px 20px 0 20px;
   }
+}
+
+.showcase-area {
+  display: block;
+}
+
+#testimonials {
+  display: none;
 }

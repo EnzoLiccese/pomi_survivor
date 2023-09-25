@@ -18,16 +18,15 @@
   <body>
     <nav class="navbar">
       <div class="navbar-container container">
-        <input type="checkbox" name="" id="" />
+        <input type="checkbox" name="" id="close-ham-menu" />
         <div class="hamburger-lines">
           <span class="line line1"></span>
           <span class="line line2"></span>
           <span class="line line3"></span>
         </div>
         <ul class="menu-items">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">Elenco squadre selezionate</a></li>
-          <li><a href="#food">Giocatori eliminati</a></li>
+          <li id="home">Home</li>
+          <li id="teams-list">Elenco squadre selezionate</li>
           <li><a href="#food-menu">Giocatori ammoniti</a></li>
           <li><a href="#testimonials">Squadre selezionate dai giocatori</a></li>
           <li><a href="#contact">Regolamento</a></li>
@@ -35,6 +34,7 @@
         <!-- <h1 class="logo">PS</h1> -->
       </div>
     </nav>
+
     <section class="showcase-area" id="showcase">
       <div class="showcase-container">
         <h1 class="main-title" id="home">Sopravvivi, se ci riesci!</h1>
@@ -243,79 +243,89 @@
             </div>
           </div>
         </div>
-      </section>
-      <section id="testimonials">
-        <h2 class="testimonial-title">What Our Customers Say</h2>
-        <div class="testimonial-container container">
-          <div class="testimonial-box">
-            <div class="customer-detail">
-              <div class="customer-photo">
-                <img
-                  src="https://i.postimg.cc/5Nrw360Y/male-photo1.jpg"
-                  alt=""
-                />
-                <p class="customer-name">Ross Lee</p>
-              </div>
+      </section> -->
+    <section id="testimonials">
+      <div class="testimonial-container container">
+        <div class="testimonial-box">
+          <div class="customer-detail">
+            <div class="customer-photo">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/2048px-FC_Internazionale_Milano_2021.svg.png"
+                alt=""
+              />
+              <p class="customer-name">Inter</p>
             </div>
-            <div class="star-rating">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </div>
-            <p class="testimonial-text">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
-              voluptas cupiditate aspernatur odit doloribus non.
-            </p>
           </div>
-          <div class="testimonial-box">
-            <div class="customer-detail">
-              <div class="customer-photo">
-                <img
-                  src="https://i.postimg.cc/sxd2xCD2/female-photo1.jpg"
-                  alt=""
-                />
-                <p class="customer-name">Amelia Watson</p>
-              </div>
-            </div>
-            <div class="star-rating">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </div>
-            <p class="testimonial-text">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
-              voluptas cupiditate aspernatur odit doloribus non.
-            </p>
+          <div class="star-rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
           </div>
-          <div class="testimonial-box">
-            <div class="customer-detail">
-              <div class="customer-photo">
-                <img
-                  src="https://i.postimg.cc/fy90qvkV/male-photo3.jpg"
-                  alt=""
-                />
-                <p class="customer-name">Ben Roy</p>
-              </div>
-            </div>
-            <div class="star-rating">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </div>
-            <p class="testimonial-text">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
-              voluptas cupiditate aspernatur odit doloribus non.
-            </p>
-          </div>
+          <p class="testimonial-text">Enzo Liccese, Antonio David</p>
         </div>
-      </section>
-      <section id="contact">
+        <div class="testimonial-box">
+          <div class="customer-detail">
+            <div class="customer-photo">
+              <img
+                src="https://www.salvatorepumo.it/wp-content/uploads/2022/10/logo-milan-oggi.png"
+                alt=""
+              />
+              <p class="customer-name">Milan</p>
+            </div>
+          </div>
+          <div class="star-rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <p class="testimonial-text">Lollo, lello</p>
+        </div>
+        <div class="testimonial-box">
+          <div class="customer-detail">
+            <div class="customer-photo">
+              <img
+                src="https://seeklogo.com/images/S/SSC_Napoli-logo-4804012EA4-seeklogo.com.png"
+                alt=""
+              />
+              <p class="customer-name">Napoli</p>
+            </div>
+          </div>
+          <div class="star-rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <p class="testimonial-text">Enzo Massarotti</p>
+        </div>
+        <div class="testimonial-box">
+          <div class="customer-detail">
+            <div class="customer-photo">
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+              />
+              <p class="customer-name">Juve</p>
+            </div>
+          </div>
+          <div class="star-rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <p class="testimonial-text">Enzo Massarotti</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="contact">
         <div class="contact-container container">
           <div class="contact-img">
             <img src="https://i.postimg.cc/1XvYM67V/restraunt2.jpg" alt="" />
@@ -333,8 +343,8 @@
             <a href="#" class="btn btn-primary">Submit</a>
           </div>
         </div>
-      </section> -->
-    <!-- <footer id="footer">
+      </section> 
+     <footer id="footer">
         <h2>Restraunt &copy; all rights reserved</h2>
       </footer> -->
   </body>
