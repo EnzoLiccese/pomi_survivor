@@ -12,6 +12,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
@@ -37,7 +41,7 @@
     </nav>
     <section class="showcase-area" id="showcase">
       <div class="showcase-container">
-        <h1 class="main-title" id="home">Sopravvivi se ci riesci!</h1>
+        <h1 class="main-title" id="home">Sopravvivi, se ci riesci!</h1>
         <p>Termine per la consegna della squadra:</p>
         <p>29/09/2023 h 12:00</p>
         <a
@@ -57,6 +61,34 @@
         </div>
         <div>
           <canvas id="myChart" style="max-width: 100%"></canvas>
+        </div>
+      </div>
+      <div class="death-container">
+        <div class="skull-img-container">
+          <img
+            src="https://img.freepik.com/premium-vector/skull-black-hand-drawn-sketch_379823-4795.jpg?w=2000"
+          />
+        </div>
+        <div class="section full-height">
+          <input
+            class="modal-btn"
+            type="checkbox"
+            id="modal-btn"
+            name="modal-btn"
+          />
+          <label for="modal-btn"
+            >Elenco eliminati<i class="uil uil-expand-arrows"></i
+          ></label>
+          <div class="modal">
+            <div class="modal-wrap">
+              <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="" />
+              <p>
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text. It has roots in a piece of classical Latin literature from
+                45 BC, making it over 2000 years old.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

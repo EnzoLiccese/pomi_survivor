@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
   counter("count1", 0, 32, 2500);
 });
 
-var xValues = ["Ammoniti: 17", "Non ammoniti: 15"];
-var yValues = [55, 45];
-var barColors = ["#f8ed62", "#16a083"];
+var xValues = ["Ammoniti: 10", "Non ammoniti: 15", "Eliminati: 7"];
+var yValues = [30, 45, 25];
+var barColors = ["#f8ed62", "#16a083", "red"];
 
 new Chart("myChart", {
   type: "pie",
