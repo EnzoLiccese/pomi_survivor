@@ -1,0 +1,60 @@
+$(document).ready(function () {
+  // Add smooth scrolling to all links
+  $("a").on("click", function (event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $("html, body").animate(
+        {
+          scrollTop: $(hash).offset().top,
+        },
+        800,
+        function () {
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        }
+      );
+    } // End if
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  function counter(id, start, end, duration) {
+    let obj = document.getElementById(id),
+      current = start,
+      range = end - start,
+      increment = end > start ? 1 : -1,
+      step = Math.abs(Math.floor(duration / range)),
+      timer = setInterval(() => {
+        current += increment;
+        obj.textContent = current;
+        if (current == end) {
+          clearInterval(timer);
+        }
+      }, step);
+  }
+  counter("count1", 0, 32, 2500);
+});
+
+var xValues = ["Ammoniti: 17", "Non ammoniti: 15"];
+var yValues = [55, 45];
+var barColors = ["#f8ed62", "#16a083"];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [
+      {
+        backgroundColor: barColors,
+        data: yValues,
+      },
+    ],
+  },
+});
