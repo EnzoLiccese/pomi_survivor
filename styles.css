@@ -932,7 +932,7 @@ body {
 }
 
 .ul-list {
-  padding: 50px;
+  padding: 15px;
 }
 
 hr {
@@ -951,4 +951,8 @@ hr {
   justify-content: center;
   margin-bottom: 10px;
   background-color: aliceblue;
+}
+
+li {
+  font-size: 13px;
 }
