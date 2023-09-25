@@ -21,7 +21,6 @@ body {
 .container {
   max-width: 1200px;
   width: 90%;
-  margin: auto;
 }
 
 .btn {
@@ -481,7 +480,7 @@ body {
     height: 23px;
     width: 35px;
     position: absolute;
-    top: 17px;
+    top: 14px;
     left: 20px;
     z-index: 2;
     display: flex;
@@ -827,18 +826,18 @@ body {
 
 .logo {
   position: absolute;
-  top: 25px;
-  left: 25px;
+  top: 0px;
   display: block;
   z-index: 1000;
   transition: all 250ms linear;
+  right: -15px;
+  display: flex;
+  align-items: center;
 }
 .logo img {
   height: 26px;
   width: auto;
   display: block;
-  filter: brightness(10%);
-  transition: filter 250ms 700ms linear;
 }
 .modal-btn:checked ~ .logo img {
   filter: brightness(100%);
