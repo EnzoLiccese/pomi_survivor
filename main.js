@@ -77,6 +77,7 @@ new Chart("myChart", {
 document.getElementById("teams-list").addEventListener("click", () => {
   document.querySelector("#close-ham-menu").click();
   document.querySelector(".showcase-area").style.display = "none";
+  document.querySelector("#selected-teams-container").style.display = "none";
   document.querySelector("#testimonials").style.display = "block";
 });
 
@@ -84,4 +85,12 @@ document.getElementById("home").addEventListener("click", () => {
   document.querySelector("#close-ham-menu").click();
   document.querySelector(".showcase-area").style.display = "block";
   document.querySelector("#testimonials").style.display = "none";
+  document.querySelector("#selected-teams-container").style.display = "none";
+});
+
+document.getElementById("selected-teams").addEventListener("click", () => {
+  document.querySelector("#close-ham-menu").click();
+  document.querySelector(".showcase-area").style.display = "none";
+  document.querySelector("#testimonials").style.display = "none";
+  document.querySelector("#selected-teams-container").style.display = "block";
 });
