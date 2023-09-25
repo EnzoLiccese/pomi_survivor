@@ -722,10 +722,7 @@ body {
   color: #ffeba7;
   box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
 }
-.modal-btn:not(:checked) + label:hover {
-  background-color: #ffeba7;
-  color: #102770;
-}
+
 .modal-btn:checked + label .uil,
 .modal-btn:not(:checked) + label .uil {
   margin-left: 10px;
