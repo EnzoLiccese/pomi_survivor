@@ -663,6 +663,11 @@ body {
   margin-top: 40px;
 }
 
+.yellow-card-container {
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
 .skull-img-container {
   display: flex;
   justify-content: center;
