@@ -14,6 +14,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  height: 100vh;
 }
 
 /* ///////////..utility classes../////////// */
@@ -342,6 +343,7 @@ body {
 
 .testimonial-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   font-size: 1.4rem;
   padding: 1rem;
@@ -956,15 +958,13 @@ li {
 
 .accordion {
   position: relative;
-  margin: 30px 0;
-  border: 1px solid black;
+  margin: 20px 0;
   border-left: none;
   border-right: none;
 }
 
 .accordion h3 {
   font-size: 1.1rem;
-  color: #c4cfde;
   font-family: "Poppins", sans-serif;
   padding: 20px;
   cursor: pointer;
@@ -993,9 +993,7 @@ li {
 
 .accordion p {
   font-size: 1rem;
-  color: #c4cfde;
   font-family: "Poppins", sans-serif;
-  opacity: 0.5;
   padding: 20px;
 }
 
@@ -1007,11 +1005,7 @@ li {
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
-}
-
-#rules {
-  display: none;
-  padding-top: 50px;
+  background-color: darkseagreen;
 }
 
 .p-style {
@@ -1029,4 +1023,24 @@ li {
 
 .question {
   padding-left: 22px;
+  background-color: white;
+}
+
+#rules {
+  display: none;
+  padding-top: 50px;
+  height: 100%;
+}
+
+#rules::before {
+  content: "";
+  background-image: url("https://img.freepik.com/premium-photo/soccer-field-football-field-with-soccer-ball-green-grass-background_518421-1167.jpg?w=360");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.45;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }

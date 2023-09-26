@@ -125,3 +125,20 @@ document.getElementById("rules-button").addEventListener("click", () => {
   document.querySelector("#selected-teams-container").style.display = "none";
   document.querySelector("#rules").style.display = "block";
 });
+
+const filterTeamsList = (e) => {
+  const elements = document.querySelectorAll('[id^="teams-player"]');
+  const filteredElements = document.querySelectorAll(
+    `[id^="teams-player ${e.target.value}"]`
+  );
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.display = "none";
+  }
+  for (i = 0; i < filteredElements.length; i++) {
+    filteredElements[i].style.display = "block";
+  }
+};
+
+document.getElementById("search-input").addEventListener("input", (event) => {
+  filterTeamsList(event);
+});
