@@ -332,6 +332,7 @@ body {
 #testimonials {
   padding: 5rem 0;
   background: rgba(243, 243, 243);
+  height: 100%;
 }
 
 .testimonial-title {
@@ -367,7 +368,7 @@ body {
   display: block;
   width: 150px;
   height: 150px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border-radius: 50%;
   margin: auto;
@@ -656,7 +657,7 @@ body {
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.5fr 1.5fr;
   align-items: center;
 }
 
@@ -1194,4 +1195,9 @@ li {
 
 p {
   font-size: 16px;
+}
+
+.line-through {
+  text-decoration: line-through;
+  color: #cc0000;
 }
