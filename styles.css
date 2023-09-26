@@ -1202,3 +1202,7 @@ p {
   text-decoration: line-through;
   color: #cc0000;
 }
+
+.customer-name {
+  font-weight: bold;
+}
