@@ -127,9 +127,10 @@ document.getElementById("rules-button").addEventListener("click", () => {
 });
 
 const filterTeamsList = (e) => {
+  const value = e.target.value.toLowerCase();
   const elements = document.querySelectorAll('[id^="teams-player"]');
   const filteredElements = document.querySelectorAll(
-    `[id^="teams-player ${e.target.value}"]`
+    `[id^="teams-player ${value}"]`
   );
   for (i = 0; i < elements.length; i++) {
     elements[i].style.display = "none";
