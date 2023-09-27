@@ -1325,4 +1325,5 @@ p {
 
 .loading-title {
   text-shadow: 0 0 25px rgba(0, 255, 55, 0.88);
+  text-align: center;
 }
