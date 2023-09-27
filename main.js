@@ -159,7 +159,12 @@ function updateTimer() {
   m = mins - hours * 60;
   s = secs - mins * 60;
 
-  if (d > 0 || h > 0 || m > 0 || s > 0) {
+  if (d < 0 || h < 0 || m < 0 || s < 0) {
+    document.getElementById("timer").innerHTML =
+      "<div>" + "<span>Turno in corso</span></div>";
+    document.getElementById("send-team").style.display = "none";
+    document.getElementById("timer").style.textShadow = "0 0 25px #16a083";
+  } else {
     document.getElementById("timer").innerHTML =
       "<div>" +
       d +
@@ -173,11 +178,6 @@ function updateTimer() {
       "<div>" +
       s +
       "<span>s</span></div>";
-  } else {
-    document.getElementById("timer").innerHTML =
-      "<div>" + "<span>Turno in corso</span></div>";
-    document.getElementById("send-team").style.background = "grey";
-    document.getElementById("timer").style.textShadow = "0 0 25px #16a083";
   }
 }
-setInterval("updateTimer()", 100);
+setInterval("updateTimer()", 200);
