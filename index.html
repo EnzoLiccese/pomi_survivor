@@ -16,1337 +16,1361 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
   <body>
-    <nav class="navbar">
-      <div class="navbar-container container">
-        <input type="checkbox" name="" id="close-ham-menu" />
-        <div class="hamburger-lines">
-          <span class="line line1"></span>
-          <span class="line line2"></span>
-          <span class="line line3"></span>
-        </div>
-        <ul class="menu-items">
-          <li id="home">Home</li>
-          <li id="teams-list">Elenco squadre selezionate</li>
-          <li id="selected-teams">Squadre selezionabili dai giocatori</li>
-          <li id="rules-button">Regolamento</li>
-        </ul>
-        <div class="logo">
-          <span class="p-style">P</span>
-          <img
-            src="https://t3.ftcdn.net/jpg/03/08/56/44/360_F_308564483_2Hy34umQvI4SLOPylF5TlPCNDjLUI2aA.jpg"
-          />
-          <span class="s-style">S</span>
+    <div class="loading">
+      <div
+        style="
+          position: absolute;
+          margin-top: 63px;
+          text-align: center;
+          font-size: 18px;
+          font-family: sans-serif;
+          font-weight: 550;
+        "
+      >
+        <h1 class="loading-title">POMI</h1>
+        <h1 class="loading-title">SURVIVOR</h1>
+        <div class="box">
+          <div class="shadow"></div>
+          <div class="gravity">
+            <div class="ball"></div>
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
+    <div class="content">
+      <nav class="navbar">
+        <div class="navbar-container container">
+          <input type="checkbox" name="" id="close-ham-menu" />
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+            <li id="home">Home</li>
+            <li id="teams-list">Elenco squadre selezionate</li>
+            <li id="selected-teams">Squadre selezionabili dai giocatori</li>
+            <li id="rules-button">Regolamento</li>
+          </ul>
+          <div class="logo">
+            <span class="p-style">P</span>
+            <img
+              src="https://t3.ftcdn.net/jpg/03/08/56/44/360_F_308564483_2Hy34umQvI4SLOPylF5TlPCNDjLUI2aA.jpg"
+            />
+            <span class="s-style">S</span>
+          </div>
+        </div>
+      </nav>
 
-    <section class="showcase-area" id="showcase">
-      <div class="showcase-container">
-        <h1 class="main-title" id="home">Sopravvivi, se ci riesci!</h1>
-        <p>Termine consegna squadra primo turno:</p>
-        <div id="timer"></div>
-        <a
-          href="https://wa.me/393277010569/?text=Digitare il nome della squadra"
-          class="btn btn-primary"
-          id="send-team"
-          >Invia squadra</a
-        >
-      </div>
-      <div class="showcase-grid">
-        <div class="player-number-container">
-          <div>
-            <span id="count1"></span>
-          </div>
-          <div style="display: flex; justify-content: center">
-            <h3>Giocatori sopravvissuti</h3>
-          </div>
-        </div>
-        <div>
-          <canvas id="myChart" width="200px"></canvas>
-        </div>
-      </div>
-      <div class="death-container">
-        <div class="skull-img-container">
-          <img
-            src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/hand_yellow_card.png"
-          />
-        </div>
-        <div class="section full-height">
-          <input
-            class="modal-btn"
-            type="checkbox"
-            id="modal-btn"
-            name="modal-btn"
-          />
-          <label for="modal-btn"
-            >Elenco ammoniti<i class="uil uil-expand-arrows"></i
-          ></label>
-          <div class="modal">
-            <div class="modal-wrap">
-              <img
-                src="https://ichef.bbci.co.uk/images/ic/1200x675/p04ld1tc.jpg"
-                alt=""
-              />
-              <p>
-                Nessun giocatore è stato ancora ammonito. Il primo potresti
-                essere proprio tu, sempre se non vieni direttamente eliminato.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="death-container" style="padding-bottom: 40px">
-        <div class="skull-img-container">
-          <img
-            src="https://img.freepik.com/premium-vector/skull-black-hand-drawn-sketch_379823-4795.jpg?w=2000"
-          />
-        </div>
-        <div class="section full-height">
-          <input
-            class="death-modal-btn"
-            type="checkbox"
-            id="death-modal-btn"
-            name="death-modal-btn"
-          />
-          <label for="death-modal-btn"
-            >Elenco eliminati<i class="uil uil-expand-arrows"></i
-          ></label>
-          <div class="death-modal">
-            <div class="death-modal-wrap">
-              <img
-                src="https://www.liquidsandsolids.com/wp-content/uploads/2022/09/what-does-it-mean-when-you-see-the-grim-reaper.jpg"
-                alt=""
-              />
-              <p>
-                Nessun giocatore è stato ancora eliminato, ma solo perchè la
-                competizione non è ancora iniziata. Confido nel fatto che il
-                primo della lista possa essere proprio tu.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="testimonials">
-      <div class="testimonial-container container">
-        <div class="testimonial-box">
-          <div class="customer-detail">
-            <div class="customer-photo">
-              <img
-                src="https://seeklogo.com/images/A/as-roma-logo-F8C0367AD8-seeklogo.com.png"
-              />
-              <p class="customer-name">Roma</p>
-            </div>
-          </div>
-          <div class="star-rating">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          </div>
-          <p class="testimonial-text">Francesco Dimotta</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="selected-teams-container">
-      <div class="input-container-wrapper">
-        <div class="input-container">
-          <input
-            type="text"
-            name="text"
-            class="input"
-            placeholder="Ricerca (nome cognome)..."
-            id="search-input"
-          />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill=""
-            viewBox="0 0 24 24"
-            class="icon"
+      <section class="showcase-area" id="showcase">
+        <div class="showcase-container">
+          <h1 class="main-title" id="home">Sopravvivi, se ci riesci!</h1>
+          <p id="timer-text">Termine consegna squadra primo turno:</p>
+          <div id="timer"></div>
+          <a
+            href="https://wa.me/393277010569/?text=Digitare il nome della squadra"
+            class="btn btn-primary"
+            id="send-team"
+            >Invia squadra</a
           >
-            <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-            <g
-              stroke-linejoin="round"
-              stroke-linecap="round"
-              id="SVGRepo_tracerCarrier"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              <rect fill="white" height="24" width="24"></rect>
-              <path
-                fill=""
-                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM9 11.5C9 10.1193 10.1193 9 11.5 9C12.8807 9 14 10.1193 14 11.5C14 12.8807 12.8807 14 11.5 14C10.1193 14 9 12.8807 9 11.5ZM11.5 7C9.01472 7 7 9.01472 7 11.5C7 13.9853 9.01472 16 11.5 16C12.3805 16 13.202 15.7471 13.8957 15.31L15.2929 16.7071C15.6834 17.0976 16.3166 17.0976 16.7071 16.7071C17.0976 16.3166 17.0976 15.6834 16.7071 15.2929L15.31 13.8957C15.7471 13.202 16 12.3805 16 11.5C16 9.01472 13.9853 7 11.5 7Z"
-                clip-rule="evenodd"
-                fill-rule="evenodd"
-              ></path>
-            </g>
-          </svg>
         </div>
-      </div>
-      <ul class="ul-list">
-        <div id="teams-player tommaso pizzilli">
-          <div class="ul-list-title">
-            <h3>Tommaso Pizzilli</h3>
-          </div>
-          <div class="li-teams-list">
+        <div class="showcase-grid">
+          <div class="player-number-container">
             <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
+              <span id="count1"></span>
             </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
+            <div style="display: flex; justify-content: center">
+              <h3>Giocatori sopravvissuti</h3>
             </div>
           </div>
-          <hr />
+          <div>
+            <canvas id="myChart" width="200px"></canvas>
+          </div>
+        </div>
+        <div class="death-container">
+          <div class="skull-img-container">
+            <img
+              src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/hand_yellow_card.png"
+            />
+          </div>
+          <div class="section full-height">
+            <input
+              class="modal-btn"
+              type="checkbox"
+              id="modal-btn"
+              name="modal-btn"
+            />
+            <label for="modal-btn"
+              >Elenco ammoniti<i class="uil uil-expand-arrows"></i
+            ></label>
+            <div class="modal">
+              <div class="modal-wrap">
+                <img
+                  src="https://ichef.bbci.co.uk/images/ic/1200x675/p04ld1tc.jpg"
+                  alt=""
+                />
+                <p>
+                  Nessun giocatore è stato ancora ammonito. Il primo potresti
+                  essere proprio tu, sempre se non vieni direttamente eliminato.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="death-container" style="padding-bottom: 40px">
+          <div class="skull-img-container">
+            <img
+              src="https://img.freepik.com/premium-vector/skull-black-hand-drawn-sketch_379823-4795.jpg?w=2000"
+            />
+          </div>
+          <div class="section full-height">
+            <input
+              class="death-modal-btn"
+              type="checkbox"
+              id="death-modal-btn"
+              name="death-modal-btn"
+            />
+            <label for="death-modal-btn"
+              >Elenco eliminati<i class="uil uil-expand-arrows"></i
+            ></label>
+            <div class="death-modal">
+              <div class="death-modal-wrap">
+                <img
+                  src="https://www.liquidsandsolids.com/wp-content/uploads/2022/09/what-does-it-mean-when-you-see-the-grim-reaper.jpg"
+                  alt=""
+                />
+                <p>
+                  Nessun giocatore è stato ancora eliminato, ma solo perchè la
+                  competizione non è ancora iniziata. Confido nel fatto che il
+                  primo della lista possa essere proprio tu.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <div class="testimonial-container container">
+          <div class="testimonial-box">
+            <div class="customer-detail">
+              <div class="customer-photo">
+                <img
+                  src="https://seeklogo.com/images/A/as-roma-logo-F8C0367AD8-seeklogo.com.png"
+                />
+                <p class="customer-name">Roma</p>
+              </div>
+            </div>
+            <div class="star-rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+            <p class="testimonial-text">Francesco Dimotta</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="selected-teams-container">
+        <div class="input-container-wrapper">
+          <div class="input-container">
+            <input
+              type="text"
+              name="text"
+              class="input"
+              placeholder="Ricerca (nome cognome)..."
+              id="search-input"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill=""
+              viewBox="0 0 24 24"
+              class="icon"
+            >
+              <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                id="SVGRepo_tracerCarrier"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <rect fill="white" height="24" width="24"></rect>
+                <path
+                  fill=""
+                  d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM9 11.5C9 10.1193 10.1193 9 11.5 9C12.8807 9 14 10.1193 14 11.5C14 12.8807 12.8807 14 11.5 14C10.1193 14 9 12.8807 9 11.5ZM11.5 7C9.01472 7 7 9.01472 7 11.5C7 13.9853 9.01472 16 11.5 16C12.3805 16 13.202 15.7471 13.8957 15.31L15.2929 16.7071C15.6834 17.0976 16.3166 17.0976 16.7071 16.7071C17.0976 16.3166 17.0976 15.6834 16.7071 15.2929L15.31 13.8957C15.7471 13.202 16 12.3805 16 11.5C16 9.01472 13.9853 7 11.5 7Z"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <ul class="ul-list">
+          <div id="teams-player tommaso pizzilli">
+            <div class="ul-list-title">
+              <h3>Tommaso Pizzilli</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player antonio david">
+            <div class="ul-list-title">
+              <h3>Antonio David</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player giovanni lubraco">
+            <div class="ul-list-title">
+              <h3>Giovanni Lubraco</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player antonio calabrese">
+            <div class="ul-list-title">
+              <h3>Antonio Calabrese</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player carmine difigola">
+            <div class="ul-list-title">
+              <h3>Carmine Difigola</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player antonio vitella">
+            <div class="ul-list-title">
+              <h3>Antonio Vitella</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player giuseppe ferrandina">
+            <div class="ul-list-title">
+              <h3>Giuseppe Ferrandina</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player gabriele laterza">
+            <div class="ul-list-title">
+              <h3>Gabriele Laterza</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player vincenzo massarotti">
+            <div class="ul-list-title">
+              <h3>Vincenzo Massarotti</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player nicola ferrandina">
+            <div class="ul-list-title">
+              <h3>Nicola Ferrandina</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player antonio armandi">
+            <div class="ul-list-title">
+              <h3>Antonio Armandi</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player carlo montano">
+            <div class="ul-list-title">
+              <h3>Carlo Montano</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player fabio montano">
+            <div class="ul-list-title">
+              <h3>Fabio Montano</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player michele buonsanti">
+            <div class="ul-list-title">
+              <h3>Michele Buonsanti</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player nicola buonsanti">
+            <div class="ul-list-title">
+              <h3>Nicola Buonsanti</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player nicola mallano">
+            <div class="ul-list-title">
+              <h3>Nicola Mallano</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player alessio difesca">
+            <div class="ul-list-title">
+              <h3>Alessio Difesca</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player manuel carioscia">
+            <div class="ul-list-title">
+              <h3>Manuel Carioscia</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player antonio martelli">
+            <div class="ul-list-title">
+              <h3>Antonio Martelli</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player gianluca laterza">
+            <div class="ul-list-title">
+              <h3>Gianluca Laterza</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player giuseppe acito">
+            <div class="ul-list-title">
+              <h3>Giuseppe Acito</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player francesco dimotta">
+            <div class="ul-list-title">
+              <h3>Francesco Dimotta</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li class="line-through">Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player leonardo perillo">
+            <div class="ul-list-title">
+              <h3>Leonardo Perillo</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player tommaso ferrandina">
+            <div class="ul-list-title">
+              <h3>Tommaso Ferrandina</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player vincenzo gallo">
+            <div class="ul-list-title">
+              <h3>Vincenzo Gallo</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player camillo paladino">
+            <div class="ul-list-title">
+              <h3>Camillo Paladino</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player riccardo de caprio">
+            <div class="ul-list-title">
+              <h3>Riccardo De caprio</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player giacomo laterza">
+            <div class="ul-list-title">
+              <h3>Giacomo Laterza</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="teams-player enzo liccese">
+            <div class="ul-list-title">
+              <h3>Enzo Liccese</h3>
+            </div>
+            <div class="li-teams-list">
+              <div>
+                <li>Atalanta</li>
+                <li>Bologna</li>
+                <li>Cagliari</li>
+                <li>Empoli</li>
+                <li>Fiorentina</li>
+              </div>
+              <div>
+                <li>Frosinone</li>
+                <li>Genoa</li>
+                <li>Verona</li>
+                <li>Inter</li>
+                <li>Juventus</li>
+              </div>
+              <div>
+                <li>Lazio</li>
+                <li>Lecce</li>
+                <li>Milan</li>
+                <li>Monza</li>
+                <li>Napoli</li>
+              </div>
+              <div>
+                <li>Roma</li>
+                <li>Salernitana</li>
+                <li>Sassuolo</li>
+                <li>Torino</li>
+                <li>Udinese</li>
+              </div>
+            </div>
+            <hr />
+          </div>
+        </ul>
+      </section>
+
+      <section id="rules">
+        <div class="accordion">
+          <div class="question">
+            <h3>Che cos'é il Fantasurvivor?</h3>
+          </div>
+          <div class="answer">
+            <p>
+              FantaSurvivor è un fantasy game che consiste nel "sopravvivere" il
+              più a lungo possibile. Ogni giocatore sceglie una squadra di Serie
+              A prima dell'inizio di ogni giornata. Se la squadra scelta
+              risulterà vincente il giocatore sopravvive e passa al turno
+              successivo. Se la squadra pareggia, il giocatore viene ammonito.
+              Al raggiungimento di due ammonizioni, il giocatore viene espulso e
+              quindi eliminato. Se la squadra perde, il giocatore viene
+              automaticamante eliminato. Tutti i giocatori sopravvissuti
+              continueranno a giocare e selezionare squadre senza mai ripetersi:
+              se ad esempio un giocatore ha selezionato la Lazio per la 3°
+              giornata ed è sopravvissuto, non potrà più selezionarla nei turni
+              successivi. Se tutte le squadre di Serie A sono state scelte
+              almeno una volta dallo stesso giocatore, questo avrà la
+              possibilità di ripetere la selezione di una squadra per una sola
+              volta. L'ultimo sopravissuto vince la lega!
+            </p>
+          </div>
         </div>
 
-        <div id="teams-player antonio david">
-          <div class="ul-list-title">
-            <h3>Antonio David</h3>
+        <div class="accordion">
+          <div class="question">
+            <h3>
+              Cosa succede se nello stesso turno tutti i giocatori vengono
+              eliminati?
+            </h3>
           </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
+          <div class="answer">
+            <p>
+              Nel caso in cui tutti i giocatori sopravvissuti vengano eliminati
+              nello stesso turno, tutti i giocatori passano al turno successivo
+              e le ammonizioni relative alla giornata non vengono refertate. Le
+              ammonizioni relative alle giornate precedenti, però, non vengono
+              azzerate.
+            </p>
           </div>
-          <hr />
         </div>
 
-        <div id="teams-player giovanni lubraco">
-          <div class="ul-list-title">
-            <h3>Giovanni Lubraco</h3>
+        <div class="accordion">
+          <div class="question">
+            <h3>Cosa succede se una partita viene rinviata?</h3>
           </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
+          <div class="answer">
+            <p>
+              Se una partita viene rinviata dopo l'inizio del turno, tutti i
+              giocatori che hanno selezionato una delle squadre relative
+              all'incontro passano il turno e vengono ammoniti. Nel caso in cui
+              un giocatore dovesse essere già ammonito, viene espulso.
+            </p>
           </div>
-          <hr />
         </div>
 
-        <div id="teams-player antonio calabrese">
-          <div class="ul-list-title">
-            <h3>Antonio Calabrese</h3>
+        <div class="accordion">
+          <div class="question">
+            <h3>
+              Cosa succede se un giocatore non comunica la squadra per una
+              determinata giornata?
+            </h3>
           </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
+          <div class="answer">
+            <p>
+              Se un giocatore non comunica al Presidente una squadra entro il
+              tempo limite della gionata, gli viene assegnata la prima squadra
+              disponibile(ordine alfabetico).
+            </p>
           </div>
-          <hr />
         </div>
 
-        <div id="teams-player carmine difigola">
-          <div class="ul-list-title">
-            <h3>Carmine Difigola</h3>
+        <div class="accordion">
+          <div class="question">
+            <h3>Chi si aggiudica il montepremi?</h3>
           </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
+          <div class="answer">
+            <p>
+              L'ultimo sopravvissuto si aggiudica l'intero montepremi, pari alla
+              quota d'iscrizione per il numero dei giocatori. Nel caso in cui,
+              dopo la 38esima giornata di Serie A, non ci sia un vincitore, i
+              giocatori sopravvissuti divideranno il montepremi.
+            </p>
           </div>
-          <hr />
         </div>
-
-        <div id="teams-player antonio vitella">
-          <div class="ul-list-title">
-            <h3>Antonio Vitella</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player giuseppe ferrandina">
-          <div class="ul-list-title">
-            <h3>Giuseppe Ferrandina</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player gabriele laterza">
-          <div class="ul-list-title">
-            <h3>Gabriele Laterza</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player vincenzo massarotti">
-          <div class="ul-list-title">
-            <h3>Vincenzo Massarotti</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player nicola ferrandina">
-          <div class="ul-list-title">
-            <h3>Nicola Ferrandina</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player antonio armandi">
-          <div class="ul-list-title">
-            <h3>Antonio Armandi</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player carlo montano">
-          <div class="ul-list-title">
-            <h3>Carlo Montano</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player fabio montano">
-          <div class="ul-list-title">
-            <h3>Fabio Montano</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player michele buonsanti">
-          <div class="ul-list-title">
-            <h3>Michele Buonsanti</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player nicola buonsanti">
-          <div class="ul-list-title">
-            <h3>Nicola Buonsanti</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player nicola mallano">
-          <div class="ul-list-title">
-            <h3>Nicola Mallano</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player alessio difesca">
-          <div class="ul-list-title">
-            <h3>Alessio Difesca</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player manuel carioscia">
-          <div class="ul-list-title">
-            <h3>Manuel Carioscia</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player antonio martelli">
-          <div class="ul-list-title">
-            <h3>Antonio Martelli</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player gianluca laterza">
-          <div class="ul-list-title">
-            <h3>Gianluca Laterza</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player giuseppe acito">
-          <div class="ul-list-title">
-            <h3>Giuseppe Acito</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player francesco dimotta">
-          <div class="ul-list-title">
-            <h3>Francesco Dimotta</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li class="line-through">Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player leonardo perillo">
-          <div class="ul-list-title">
-            <h3>Leonardo Perillo</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player tommaso ferrandina">
-          <div class="ul-list-title">
-            <h3>Tommaso Ferrandina</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player vincenzo gallo">
-          <div class="ul-list-title">
-            <h3>Vincenzo Gallo</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player camillo paladino">
-          <div class="ul-list-title">
-            <h3>Camillo Paladino</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player riccardo de caprio">
-          <div class="ul-list-title">
-            <h3>Riccardo De caprio</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player giacomo laterza">
-          <div class="ul-list-title">
-            <h3>Giacomo Laterza</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-
-        <div id="teams-player enzo liccese">
-          <div class="ul-list-title">
-            <h3>Enzo Liccese</h3>
-          </div>
-          <div class="li-teams-list">
-            <div>
-              <li>Atalanta</li>
-              <li>Bologna</li>
-              <li>Cagliari</li>
-              <li>Empoli</li>
-              <li>Fiorentina</li>
-            </div>
-            <div>
-              <li>Frosinone</li>
-              <li>Genoa</li>
-              <li>Verona</li>
-              <li>Inter</li>
-              <li>Juventus</li>
-            </div>
-            <div>
-              <li>Lazio</li>
-              <li>Lecce</li>
-              <li>Milan</li>
-              <li>Monza</li>
-              <li>Napoli</li>
-            </div>
-            <div>
-              <li>Roma</li>
-              <li>Salernitana</li>
-              <li>Sassuolo</li>
-              <li>Torino</li>
-              <li>Udinese</li>
-            </div>
-          </div>
-          <hr />
-        </div>
-      </ul>
-    </section>
-
-    <section id="rules">
-      <div class="accordion">
-        <div class="question">
-          <h3>Che cos'é il Fantasurvivor?</h3>
-        </div>
-        <div class="answer">
-          <p>
-            FantaSurvivor è un fantasy game che consiste nel "sopravvivere" il
-            più a lungo possibile. Ogni giocatore sceglie una squadra di Serie A
-            prima dell'inizio di ogni giornata. Se la squadra scelta risulterà
-            vincente il giocatore sopravvive e passa al turno successivo. Se la
-            squadra pareggia, il giocatore viene ammonito. Al raggiungimento di
-            due ammonizioni, il giocatore viene espulso e quindi eliminato. Se
-            la squadra perde, il giocatore viene automaticamante eliminato.
-            Tutti i giocatori sopravvissuti continueranno a giocare e
-            selezionare squadre senza mai ripetersi: se ad esempio un giocatore
-            ha selezionato la Lazio per la 3° giornata ed è sopravvissuto, non
-            potrà più selezionarla nei turni successivi. Se tutte le squadre di
-            Serie A sono state scelte almeno una volta dallo stesso giocatore,
-            questo avrà la possibilità di ripetere la selezione di una squadra
-            per una sola volta. L'ultimo sopravissuto vince la lega!
-          </p>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <div class="question">
-          <h3>
-            Cosa succede se nello stesso turno tutti i giocatori vengono
-            eliminati?
-          </h3>
-        </div>
-        <div class="answer">
-          <p>
-            Nel caso in cui tutti i giocatori sopravvissuti vengano eliminati
-            nello stesso turno, tutti i giocatori passano al turno successivo e
-            le ammonizioni relative alla giornata non vengono refertate. Le
-            ammonizioni relative alle giornate precedenti, però, non vengono
-            azzerate.
-          </p>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <div class="question">
-          <h3>Cosa succede se una partita viene rinviata?</h3>
-        </div>
-        <div class="answer">
-          <p>
-            Se una partita viene rinviata dopo l'inizio del turno, tutti i
-            giocatori che hanno selezionato una delle squadre relative
-            all'incontro passano il turno e vengono ammoniti. Nel caso in cui un
-            giocatore dovesse essere già ammonito, viene espulso.
-          </p>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <div class="question">
-          <h3>
-            Cosa succede se un giocatore non comunica la squadra per una
-            determinata giornata?
-          </h3>
-        </div>
-        <div class="answer">
-          <p>
-            Se un giocatore non comunica al Presidente una squadra entro il
-            tempo limite della gionata, gli viene assegnata la prima squadra
-            disponibile(ordine alfabetico).
-          </p>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <div class="question">
-          <h3>Chi si aggiudica il montepremi?</h3>
-        </div>
-        <div class="answer">
-          <p>
-            L'ultimo sopravvissuto si aggiudica l'intero montepremi, pari alla
-            quota d'iscrizione per il numero dei giocatori. Nel caso in cui,
-            dopo la 38esima giornata di Serie A, non ci sia un vincitore, i
-            giocatori sopravvissuti divideranno il montepremi.
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

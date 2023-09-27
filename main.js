@@ -1,3 +1,10 @@
+const loading = document.querySelector(".loading");
+const content = document.querySelector(".content");
+setTimeout(() => {
+  loading.style.opacity = "0";
+  content.style.opacity = "1";
+}, 2000);
+
 $(document).ready(function () {
   // Add smooth scrolling to all links
   $("a").on("click", function (event) {
@@ -24,6 +31,7 @@ $(document).ready(function () {
     } // End if
   });
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   function counter(id, start, end, duration) {
     let obj = document.getElementById(id),
@@ -39,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, step);
   }
-  counter("count1", 0, 32, 2500);
+  counter("count1", 0, 30, 4000);
 });
 
 var xValues = ["Ammoniti: 10", "Non ammoniti: 15", "Eliminati: 7"];
@@ -163,7 +171,11 @@ function updateTimer() {
     document.getElementById("timer").innerHTML =
       "<div>" + "<span>Turno in corso</span></div>";
     document.getElementById("send-team").style.display = "none";
+    document.getElementById("timer").style.backgroundColor = "transparent";
+    document.getElementById("timer").style.color = "black";
     document.getElementById("timer").style.textShadow = "0 0 25px #16a083";
+    document.getElementById("timer-text").innerText =
+      "Termine consegna squadra primo turno scaduto.";
   } else {
     document.getElementById("timer").innerHTML =
       "<div>" +
@@ -180,4 +192,4 @@ function updateTimer() {
       "<span>s</span></div>";
   }
 }
-setInterval("updateTimer()", 200);
+setInterval("updateTimer()", 1000);
