@@ -143,3 +143,41 @@ const filterTeamsList = (e) => {
 document.getElementById("search-input").addEventListener("input", (event) => {
   filterTeamsList(event);
 });
+
+function updateTimer() {
+  future = Date.parse("September 30, 2023 12:00:00");
+  now = new Date();
+  diff = future - now;
+
+  days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  hours = Math.floor(diff / (1000 * 60 * 60));
+  mins = Math.floor(diff / (1000 * 60));
+  secs = Math.floor(diff / 1000);
+
+  d = days;
+  h = hours - days * 24;
+  m = mins - hours * 60;
+  s = secs - mins * 60;
+
+  if (d > 0 && h > 0 && m > 0 && s > 0) {
+    document.getElementById("timer").innerHTML =
+      "<div>" +
+      d +
+      "<span>GG</span></div>" +
+      "<div>" +
+      h +
+      "<span>h</span></div>" +
+      "<div>" +
+      m +
+      "<span>m</span></div>" +
+      "<div>" +
+      s +
+      "<span>s</span></div>";
+  } else {
+    document.getElementById("timer").innerHTML =
+      "<div>" + "<span>Turno in corso</span></div>";
+    document.getElementById("send-team").style.background = "grey";
+    document.getElementById("timer").style.textShadow = "0 0 25px #16a083";
+  }
+}
+setInterval("updateTimer()", 100);

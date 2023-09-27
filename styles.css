@@ -1206,3 +1206,26 @@ p {
 .customer-name {
   font-weight: bold;
 }
+
+#timer {
+  color: grey;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #454545;
+  text-shadow: 0 0 25px #f8ed62;
+
+  div {
+    display: inline-block;
+    min-width: 90px;
+
+    span {
+      color: #b1cdf1;
+      display: block;
+      font-size: 0.35em;
+      font-weight: 400;
+    }
+  }
+}
