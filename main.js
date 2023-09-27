@@ -159,7 +159,7 @@ function updateTimer() {
   m = mins - hours * 60;
   s = secs - mins * 60;
 
-  if (d > 0 || h > 0 || m > 0) {
+  if (d > 0 || h > 0 || m > 0 || s > 0) {
     document.getElementById("timer").innerHTML =
       "<div>" +
       d +
