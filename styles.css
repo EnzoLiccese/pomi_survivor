@@ -17,8 +17,6 @@ body {
   height: 100vh;
 }
 
-/* ///////////..utility classes../////////// */
-
 .container {
   max-width: 1200px;
   width: 90%;
@@ -45,10 +43,6 @@ body {
   background: #117964;
   transition: background 0.3s ease-in-out;
 }
-
-/* ............/navbar/............ *
-
-/* desktop mode............/// */
 
 .navbar input[type="checkbox"],
 .navbar .hamburger-lines {
@@ -193,8 +187,6 @@ body {
   object-fit: cover;
   object-position: right;
 }
-
-/* ..........////Food category///........... */
 
 #food {
   padding: 5rem 0 10rem 0;
