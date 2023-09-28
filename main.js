@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, step);
   }
-  counter("count1", 0, 30, 4000);
+  counter("count1", 0, 32, 4000);
 });
 
 var xValues = ["Ammoniti: 10", "Non ammoniti: 15", "Eliminati: 7"];
