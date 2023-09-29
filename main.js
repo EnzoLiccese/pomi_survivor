@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
   counter("count1", 0, 33, 4000);
 });
 
-var xValues = ["Ammoniti: 10", "Non ammoniti: 15", "Eliminati: 7"];
-var yValues = [30, 45, 25];
+var xValues = ["Ammoniti: 10", "Non ammoniti: 33", "Eliminati: 7"];
+var yValues = [0, 100, 0];
 var barColors = ["#f8ed62", "#16a083", "red"];
 
 new Chart("myChart", {
