@@ -359,11 +359,10 @@ body {
 
 .customer-photo img {
   display: block;
-  width: 150px;
+  width: 140px;
   height: 150px;
   object-fit: contain;
   object-position: center;
-  border-radius: 50%;
   margin: auto;
 }
 
