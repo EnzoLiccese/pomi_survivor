@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   counter("count1", 0, 36, 4000);
 });
 
-var xValues = ["Ammoniti: 10", "Non ammoniti: 34", "Eliminati: 7"];
+var xValues = ["Ammoniti: 10", "Non ammoniti: 36", "Eliminati: 7"];
 var yValues = [0, 100, 0];
 var barColors = ["#f8ed62", "#16a083", "red"];
 
