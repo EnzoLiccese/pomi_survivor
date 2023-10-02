@@ -48,11 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, step);
   }
-  counter("count1", 0, 36, 4000);
+  counter("count1", 0, 35, 4000);
 });
 
-var xValues = ["Ammoniti: 10", "Non ammoniti: 36", "Eliminati: 7"];
-var yValues = [0, 100, 0];
+var xValues = ["Ammoniti: 4", "Non ammoniti: 31", "Eliminati: 1"];
+var yValues = [12, 85, 3];
 var barColors = ["#f8ed62", "#16a083", "red"];
 
 new Chart("myChart", {
@@ -154,7 +154,7 @@ document.getElementById("search-input").addEventListener("input", (event) => {
 });
 
 function updateTimer() {
-  future = Date.parse("September 30, 2023 12:00:00");
+  future = Date.parse("October 6, 2023 17:00:00");
   now = new Date();
   diff = future - now;
 
