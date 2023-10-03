@@ -1335,6 +1335,7 @@ p {
   display: none;
   padding-top: 70px;
   background-color: #16a083;
+  height: 100vh;
 }
 
 #date {
