@@ -1378,11 +1378,6 @@ p {
   align-items: center;
 }
 
-#main_title,
-#main_image {
-  margin-top: 1rem;
-}
-
 #fixtures {
   padding-top: 70px;
 }
