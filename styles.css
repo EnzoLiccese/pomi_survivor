@@ -1333,6 +1333,7 @@ p {
 
 #fixtures {
   display: none;
+  padding-top: 70px;
 }
 
 #date {
@@ -1376,10 +1377,6 @@ p {
 
 .row {
   align-items: center;
-}
-
-#fixtures {
-  padding-top: 70px;
 }
 
 .home,
