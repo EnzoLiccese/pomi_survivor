@@ -324,8 +324,8 @@ body {
 
 #testimonials {
   padding: 5rem 0;
-  /* background: rgba(243, 243, 243); */
-  height: 100%;
+  background: rgba(243, 243, 243);
+  height: 100vh;
 }
 
 .testimonial-title {
