@@ -1334,8 +1334,20 @@ p {
 #fixtures {
   display: none;
   padding-top: 70px;
-  background-color: #16a083;
   height: 100vh;
+}
+
+#fixtures::before {
+  content: "";
+  background-image: url("https://images.unsplash.com/photo-1522947961977-67fe74257c16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.45;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 
 #date {
@@ -1351,6 +1363,7 @@ p {
   border: 1px solid black;
   padding: 7px;
   background-color: white;
+  position: relative;
 }
 
 .home {
