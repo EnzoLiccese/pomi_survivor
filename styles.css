@@ -1334,6 +1334,7 @@ p {
 #fixtures {
   display: none;
   padding-top: 70px;
+  background-color: #16a083;
 }
 
 #date {
@@ -1348,7 +1349,7 @@ p {
   margin-bottom: 15px;
   border: 1px solid black;
   padding: 7px;
-  background-color: #16a083;
+  background-color: white;
 }
 
 .home {
