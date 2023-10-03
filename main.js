@@ -109,6 +109,7 @@ document.getElementById("teams-list").addEventListener("click", () => {
   document.querySelector("#selected-teams-container").style.display = "none";
   document.querySelector("#testimonials").style.display = "block";
   document.querySelector("#rules").style.display = "none";
+  document.querySelector("#fixtures").style.display = "none";
 });
 
 document.getElementById("home").addEventListener("click", () => {
@@ -117,6 +118,7 @@ document.getElementById("home").addEventListener("click", () => {
   document.querySelector("#testimonials").style.display = "none";
   document.querySelector("#selected-teams-container").style.display = "none";
   document.querySelector("#rules").style.display = "none";
+  document.querySelector("#fixtures").style.display = "none";
 });
 
 document.getElementById("selected-teams").addEventListener("click", () => {
@@ -125,6 +127,7 @@ document.getElementById("selected-teams").addEventListener("click", () => {
   document.querySelector("#testimonials").style.display = "none";
   document.querySelector("#selected-teams-container").style.display = "block";
   document.querySelector("#rules").style.display = "none";
+  document.querySelector("#fixtures").style.display = "none";
 });
 
 document.getElementById("rules-button").addEventListener("click", () => {
@@ -133,6 +136,16 @@ document.getElementById("rules-button").addEventListener("click", () => {
   document.querySelector("#testimonials").style.display = "none";
   document.querySelector("#selected-teams-container").style.display = "none";
   document.querySelector("#rules").style.display = "block";
+  document.querySelector("#fixtures").style.display = "none";
+});
+
+document.getElementById("fixtures-button").addEventListener("click", () => {
+  document.querySelector("#close-ham-menu").click();
+  document.querySelector(".showcase-area").style.display = "none";
+  document.querySelector("#testimonials").style.display = "none";
+  document.querySelector("#selected-teams-container").style.display = "none";
+  document.querySelector("#rules").style.display = "none";
+  document.querySelector("#fixtures").style.display = "block";
 });
 
 const filterTeamsList = (e) => {
