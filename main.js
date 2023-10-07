@@ -189,7 +189,7 @@ function updateTimer() {
     document.getElementById("timer").style.color = "black";
     document.getElementById("timer").style.textShadow = "0 0 25px #16a083";
     document.getElementById("timer-text").innerText =
-      "Termine consegna squadra primo turno scaduto.";
+      "Termine consegna squadra secondo turno scaduto.";
   } else {
     document.getElementById("timer").innerHTML =
       "<div>" +
