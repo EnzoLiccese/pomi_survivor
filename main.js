@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
   counter("count1", 0, 35, 4000);
 });
 
-var xValues = ["Ammoniti: 4", "Non ammoniti: 31", "Eliminati: 1"];
-var yValues = [12, 85, 3];
+var xValues = ["Ammoniti: 12", "Non ammoniti: 23", "Eliminati: 1"];
+var yValues = [35, 62, 3];
 var barColors = ["#f8ed62", "#16a083", "red"];
 
 new Chart("myChart", {
@@ -167,7 +167,7 @@ document.getElementById("search-input").addEventListener("input", (event) => {
 });
 
 function updateTimer() {
-  future = Date.parse("October 6, 2023 17:00:00");
+  future = Date.parse("October 21, 2023 13:00:00");
   now = new Date();
   diff = future - now;
 
@@ -189,7 +189,7 @@ function updateTimer() {
     document.getElementById("timer").style.color = "black";
     document.getElementById("timer").style.textShadow = "0 0 25px #16a083";
     document.getElementById("timer-text").innerText =
-      "Termine consegna squadra secondo turno scaduto.";
+      "Termine consegna squadra terzo turno scaduto.";
   } else {
     document.getElementById("timer").innerHTML =
       "<div>" +

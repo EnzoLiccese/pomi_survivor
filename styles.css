@@ -324,7 +324,7 @@ body {
 
 #testimonials {
   padding: 5rem 0;
-  background: rgba(243, 243, 243);
+  /* background: rgba(243, 243, 243); */
 }
 
 .testimonial-title {
@@ -1322,6 +1322,8 @@ p {
 .death-list,
 .yellow-cards-list {
   padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .death-list li,
