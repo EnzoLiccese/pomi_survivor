@@ -1333,19 +1333,6 @@ p {
   font-weight: 600;
 }
 
-#fixtures::before {
-  content: "";
-  background-image: url("https://images.unsplash.com/photo-1522947961977-67fe74257c16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.45;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
 #date {
   color: aliceblue;
   margin-bottom: 2rem;
