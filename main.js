@@ -48,11 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, step);
   }
-  counter("count1", 0, 35, 4000);
+  counter("count1", 0, 27, 4000);
 });
 
-var xValues = ["Ammoniti: 12", "Non ammoniti: 23", "Eliminati: 1"];
-var yValues = [35, 62, 3];
+var xValues = ["Ammoniti: 15", "Non ammoniti: 12", "Eliminati: 9"];
+var yValues = [42, 33, 25];
 var barColors = ["#f8ed62", "#16a083", "red"];
 
 new Chart("myChart", {
@@ -109,7 +109,6 @@ document.getElementById("teams-list").addEventListener("click", () => {
   document.querySelector("#selected-teams-container").style.display = "none";
   document.querySelector("#testimonials").style.display = "block";
   document.querySelector("#rules").style.display = "none";
-  document.querySelector("#fixtures").style.display = "none";
 });
 
 document.getElementById("home").addEventListener("click", () => {
@@ -118,7 +117,6 @@ document.getElementById("home").addEventListener("click", () => {
   document.querySelector("#testimonials").style.display = "none";
   document.querySelector("#selected-teams-container").style.display = "none";
   document.querySelector("#rules").style.display = "none";
-  document.querySelector("#fixtures").style.display = "none";
 });
 
 document.getElementById("selected-teams").addEventListener("click", () => {
@@ -127,7 +125,6 @@ document.getElementById("selected-teams").addEventListener("click", () => {
   document.querySelector("#testimonials").style.display = "none";
   document.querySelector("#selected-teams-container").style.display = "block";
   document.querySelector("#rules").style.display = "none";
-  document.querySelector("#fixtures").style.display = "none";
 });
 
 document.getElementById("rules-button").addEventListener("click", () => {
@@ -136,16 +133,6 @@ document.getElementById("rules-button").addEventListener("click", () => {
   document.querySelector("#testimonials").style.display = "none";
   document.querySelector("#selected-teams-container").style.display = "none";
   document.querySelector("#rules").style.display = "block";
-  document.querySelector("#fixtures").style.display = "none";
-});
-
-document.getElementById("fixtures-button").addEventListener("click", () => {
-  document.querySelector("#close-ham-menu").click();
-  document.querySelector(".showcase-area").style.display = "none";
-  document.querySelector("#testimonials").style.display = "none";
-  document.querySelector("#selected-teams-container").style.display = "none";
-  document.querySelector("#rules").style.display = "none";
-  document.querySelector("#fixtures").style.display = "block";
 });
 
 const filterTeamsList = (e) => {
@@ -167,7 +154,7 @@ document.getElementById("search-input").addEventListener("input", (event) => {
 });
 
 function updateTimer() {
-  future = Date.parse("October 21, 2023 13:00:00");
+  future = Date.parse("October 27, 2023 18:00:00");
   now = new Date();
   diff = future - now;
 
@@ -189,7 +176,7 @@ function updateTimer() {
     document.getElementById("timer").style.color = "black";
     document.getElementById("timer").style.textShadow = "0 0 25px #16a083";
     document.getElementById("timer-text").innerText =
-      "Termine consegna squadra terzo turno scaduto.";
+      "Termine consegna squadra quarto turno scaduto.";
   } else {
     document.getElementById("timer").innerHTML =
       "<div>" +
