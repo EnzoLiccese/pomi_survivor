@@ -1333,11 +1333,6 @@ p {
   font-weight: 600;
 }
 
-#fixtures {
-  display: none;
-  padding-top: 70px;
-}
-
 #fixtures::before {
   content: "";
   background-image: url("https://images.unsplash.com/photo-1522947961977-67fe74257c16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80");
