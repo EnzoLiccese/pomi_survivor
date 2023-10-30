@@ -48,11 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, step);
   }
-  counter("count1", 0, 27, 4000);
+  counter("count1", 0, 26, 4000);
 });
 
-var xValues = ["Ammoniti: 15", "Non ammoniti: 12", "Eliminati: 9"];
-var yValues = [42, 33, 25];
+var xValues = ["Ammoniti: 14", "Non ammoniti: 12", "Eliminati: 10"];
+var yValues = [39, 33, 28];
 var barColors = ["#f8ed62", "#16a083", "red"];
 
 new Chart("myChart", {
@@ -154,7 +154,7 @@ document.getElementById("search-input").addEventListener("input", (event) => {
 });
 
 function updateTimer() {
-  future = Date.parse("October 27, 2023 18:00:00");
+  future = Date.parse("November 03, 2023 18:00:00");
   now = new Date();
   diff = future - now;
 
@@ -176,7 +176,7 @@ function updateTimer() {
     document.getElementById("timer").style.color = "black";
     document.getElementById("timer").style.textShadow = "0 0 25px #16a083";
     document.getElementById("timer-text").innerText =
-      "Termine consegna squadra quarto turno scaduto.";
+      "Termine consegna squadra quinto turno scaduto.";
   } else {
     document.getElementById("timer").innerHTML =
       "<div>" +
