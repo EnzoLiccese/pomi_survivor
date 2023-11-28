@@ -1416,23 +1416,6 @@ p {
   width: 200px !important;
 }
 
-.fireworks {
-  animation: fadeOut ease 10s;
-  -webkit-animation: fadeOut ease 10s;
-  -moz-animation: fadeOut ease 10s;
-  -o-animation: fadeOut ease 10s;
-  -ms-animation: fadeOut ease 10s;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .notepad {
   width: 80%;
   max-width: 600px;
