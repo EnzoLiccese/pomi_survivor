@@ -112,9 +112,11 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; */
-  canvas {
-    background: #000;
-  }
+  background-color: #fde9eb;
+}
+
+#canvas {
+  background: #000;
 }
 
 .showcase-container {
@@ -1464,9 +1466,9 @@ p {
 }
 
 .article {
-  background-color: #fde9eb;
   min-height: 100vh;
   height: 100%;
+  display: none;
 }
 
 .pres {

@@ -199,11 +199,10 @@ window.addEventListener("resize", resizeCanvas, false);
 window.addEventListener("DOMContentLoaded", onLoad, false);
 
 window.addEventListener("DOMContentLoaded", function () {
-  setTimeout(
-    () =>
-      (document.getElementsByClassName("fireworks")[0].style.display = "none"),
-    8000
-  );
+  setTimeout(() => {
+    document.getElementsByClassName("fireworks")[0].style.display = "none";
+    document.getElementsByClassName("article")[0].style.display = "block";
+  }, 8000);
 });
 
 window.requestAnimationFrame =
