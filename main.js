@@ -33,23 +33,23 @@ $(document).ready(function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  function counter(id, start, end, duration) {
-    let obj = document.getElementById(id),
-      current = start,
-      range = end - start,
-      increment = end > start ? 1 : -1,
-      step = Math.abs(Math.floor(duration / range)),
-      timer = setInterval(() => {
-        current += increment;
-        obj.textContent = current;
-        if (current == end) {
-          clearInterval(timer);
-        }
-      }, step);
-  }
-  counter("count1", 0, 3, 4000);
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   function counter(id, start, end, duration) {
+//     let obj = document.getElementById(id),
+//       current = start,
+//       range = end - start,
+//       increment = end > start ? 1 : -1,
+//       step = Math.abs(Math.floor(duration / range)),
+//       timer = setInterval(() => {
+//         current += increment;
+//         obj.textContent = current;
+//         if (current == end) {
+//           clearInterval(timer);
+//         }
+//       }, step);
+//   }
+//   counter("count1", 0, 3, 4000);
+// });
 
 var xValues = ["Ammoniti: 0", "Non ammoniti: 3", "Eliminati: 33"];
 var yValues = [0, 8, 92];
@@ -153,44 +153,187 @@ document.getElementById("search-input").addEventListener("input", (event) => {
   filterTeamsList(event);
 });
 
-function updateTimer() {
-  future = Date.parse("November 25, 2023 14:55:00");
-  now = new Date();
-  diff = future - now;
+// function updateTimer() {
+//   future = Date.parse("November 25, 2023 14:55:00");
+//   now = new Date();
+//   diff = future - now;
 
-  days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  hours = Math.floor(diff / (1000 * 60 * 60));
-  mins = Math.floor(diff / (1000 * 60));
-  secs = Math.floor(diff / 1000);
+//   days = Math.floor(diff / (1000 * 60 * 60 * 24));
+//   hours = Math.floor(diff / (1000 * 60 * 60));
+//   mins = Math.floor(diff / (1000 * 60));
+//   secs = Math.floor(diff / 1000);
 
-  d = days;
-  h = hours - days * 24;
-  m = mins - hours * 60;
-  s = secs - mins * 60;
+//   d = days;
+//   h = hours - days * 24;
+//   m = mins - hours * 60;
+//   s = secs - mins * 60;
 
-  if (d < 0 || h < 0 || m < 0 || s < 0) {
-    document.getElementById("timer").innerHTML =
-      "<div>" + "<span>Turno in corso</span></div>";
-    document.getElementById("send-team").style.display = "none";
-    document.getElementById("timer").style.backgroundColor = "transparent";
-    document.getElementById("timer").style.color = "black";
-    document.getElementById("timer").style.textShadow = "0 0 25px #16a083";
-    document.getElementById("timer-text").innerText =
-      "Termine consegna squadra settimo turno scaduto.";
-  } else {
-    document.getElementById("timer").innerHTML =
-      "<div>" +
-      d +
-      "<span>GG</span></div>" +
-      "<div>" +
-      h +
-      "<span>h</span></div>" +
-      "<div>" +
-      m +
-      "<span>m</span></div>" +
-      "<div>" +
-      s +
-      "<span>s</span></div>";
+//   if (d < 0 || h < 0 || m < 0 || s < 0) {
+//     document.getElementById("timer").innerHTML =
+//       "<div>" + "<span>Turno in corso</span></div>";
+//     document.getElementById("send-team").style.display = "none";
+//     document.getElementById("timer").style.backgroundColor = "transparent";
+//     document.getElementById("timer").style.color = "black";
+//     document.getElementById("timer").style.textShadow = "0 0 25px #16a083";
+//     document.getElementById("timer-text").innerText =
+//       "Termine consegna squadra settimo turno scaduto.";
+//   } else {
+//     document.getElementById("timer").innerHTML =
+//       "<div>" +
+//       d +
+//       "<span>GG</span></div>" +
+//       "<div>" +
+//       h +
+//       "<span>h</span></div>" +
+//       "<div>" +
+//       m +
+//       "<span>m</span></div>" +
+//       "<div>" +
+//       s +
+//       "<span>s</span></div>";
+//   }
+// }
+// setInterval("updateTimer()", 1000);
+
+window.addEventListener("resize", resizeCanvas, false);
+window.addEventListener("DOMContentLoaded", onLoad, false);
+
+window.addEventListener("DOMContentLoaded", function () {
+  setTimeout(
+    () =>
+      (document.getElementsByClassName("fireworks")[0].style.display = "none"),
+    8000
+  );
+});
+
+window.requestAnimationFrame =
+  window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.oRequestAnimationFrame ||
+  window.msRequestAnimationFrame ||
+  function (callback) {
+    window.setTimeout(callback, 1000 / 60);
+  };
+
+var canvas,
+  ctx,
+  w,
+  h,
+  particles = [],
+  probability = 0.04,
+  xPoint,
+  yPoint;
+
+function onLoad() {
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
+  resizeCanvas();
+
+  window.requestAnimationFrame(updateWorld);
+}
+
+function resizeCanvas() {
+  if (!!canvas) {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
   }
 }
-setInterval("updateTimer()", 1000);
+
+function updateWorld() {
+  update();
+  paint();
+  window.requestAnimationFrame(updateWorld);
+}
+
+function update() {
+  if (particles.length < 500 && Math.random() < probability) {
+    createFirework();
+  }
+  var alive = [];
+  for (var i = 0; i < particles.length; i++) {
+    if (particles[i].move()) {
+      alive.push(particles[i]);
+    }
+  }
+  particles = alive;
+}
+
+function paint() {
+  ctx.globalCompositeOperation = "source-over";
+  ctx.fillStyle = "rgba(0,0,0,0.2)";
+  ctx.fillRect(0, 0, w, h);
+  ctx.globalCompositeOperation = "lighter";
+  for (var i = 0; i < particles.length; i++) {
+    particles[i].draw(ctx);
+  }
+}
+
+function createFirework() {
+  xPoint = Math.random() * (w - 200) + 100;
+  yPoint = Math.random() * (h - 200) + 100;
+  var nFire = Math.random() * 50 + 100;
+  var c =
+    "rgb(" +
+    ~~(Math.random() * 200 + 55) +
+    "," +
+    ~~(Math.random() * 200 + 55) +
+    "," +
+    ~~(Math.random() * 200 + 55) +
+    ")";
+  for (var i = 0; i < nFire; i++) {
+    var particle = new Particle();
+    particle.color = c;
+    var vy = Math.sqrt(25 - particle.vx * particle.vx);
+    if (Math.abs(particle.vy) > vy) {
+      particle.vy = particle.vy > 0 ? vy : -vy;
+    }
+    particles.push(particle);
+  }
+}
+
+function Particle() {
+  this.w = this.h = Math.random() * 4 + 1;
+
+  this.x = xPoint - this.w / 2;
+  this.y = yPoint - this.h / 2;
+
+  this.vx = (Math.random() - 0.5) * 10;
+  this.vy = (Math.random() - 0.5) * 10;
+
+  this.alpha = Math.random() * 0.5 + 0.5;
+
+  this.color;
+}
+
+Particle.prototype = {
+  gravity: 0.05,
+  move: function () {
+    this.x += this.vx;
+    this.vy += this.gravity;
+    this.y += this.vy;
+    this.alpha -= 0.01;
+    if (
+      this.x <= -this.w ||
+      this.x >= screen.width ||
+      this.y >= screen.height ||
+      this.alpha <= 0
+    ) {
+      return false;
+    }
+    return true;
+  },
+  draw: function (c) {
+    c.save();
+    c.beginPath();
+
+    c.translate(this.x + this.w / 2, this.y + this.h / 2);
+    c.arc(0, 0, this.w, 0, Math.PI * 2);
+    c.fillStyle = this.color;
+    c.globalAlpha = this.alpha;
+
+    c.closePath();
+    c.fill();
+    c.restore();
+  },
+};
